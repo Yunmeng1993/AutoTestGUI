@@ -1,5 +1,3 @@
-from selenium.webdriver import Chrome
-from selenium.webdriver.common.keys import Keys
 import time
 import datetime
 
@@ -13,21 +11,18 @@ print(now)
 print('title', driver.title)
 
 assert "Cyclomedia" in driver.title
-#time.sleep(5)
 print('Cyclomedia', now)
 
 #click "Carrières"
 
 bedrijf_button = driver.find_element_by_link_text("Carrières")
 driver.execute_script("arguments[0].click();", bedrijf_button)
-#time.sleep(5)
 print('Carrières', now)
 
 #click "Tester"
-#tester_button = driver.find_element_by_link_text("Lees meer")
 tester_button = driver.find_element_by_xpath("//*[@id='slick-slide01']/div/a[2]");
 driver.execute_script("arguments[0].click();", tester_button)
-#tester_button.click()
 time.sleep(5)
 print('Tester', now)
 
+#driver.close()
